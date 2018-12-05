@@ -35,7 +35,13 @@ public class ASSGui {
 		
 		//creates the labels
 		user = new JLabel("Username: ");
+		c.gridx = 0;
+		c.gridy = 0;
+		panel.add(user, c);
 		pass = new JLabel("Password: ");
+		c.gridx = 0;
+		c.gridy = 1;
+		panel.add(pass, c);
 		fail = new JLabel("Incorrect Password");
 		
 		//positioning
@@ -51,8 +57,9 @@ public class ASSGui {
 		panel.add(pass);
 		panel.add(userName);
 		panel.add(passWord);
-		frame.add(panel);
 		**/
+		frame.setContentPane(panel);
+		
 		
 		frame.setSize(450, 450);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
