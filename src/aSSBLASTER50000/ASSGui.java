@@ -39,7 +39,7 @@ public class ASSGui {
 		fail = new JLabel("Incorrect Password");
 		
 		//positioning
-		
+		//kike
 		
 		/**user.setBounds(10, 400, 50, 20);
 		pass.setBounds(10, 170, 50, 30);
