@@ -17,30 +17,35 @@ public class ASSGui {
 	public ASSGui() {
 		
 		//creates frame and panel
-		JFrame frame = new JFrame();
-		JPanel panel = new JPanel();
+		frame = new JFrame();
+		panel = new JPanel();
 		
 		//creates the text fields
-		JTextField userName = new JTextField(20);
-		JTextField passWord = new JTextField(20);
+		userName = new JTextField(20);
+		passWord = new JTextField(20);
 		
 		//creates the buttons
-		JButton btnEnter = new JButton();
+		btnEnter = new JButton();
 		
 		//creates the labels
-		JLabel user = new JLabel("Username: ");
-		JLabel pass = new JLabel("Password: ");
-		JLabel fail = new JLabel("Incorrect Password");
+		user = new JLabel("Username: ");
+		pass = new JLabel("Password: ");
+		fail = new JLabel("Incorrect Password");
 		
 		//positioning
-		user.setBounds(10, 200, 50, 20);
-		pass.setBounds(10, 170, 50, 20);
+		user.setBounds(10, 400, 50, 20);
+		pass.setBounds(10, 170, 50, 30);
+		
+		userName.setBounds(50, 225, 75, 25);
+		passWord.setBounds(50,170, 75, 25);
 		
 		panel.add(user);
 		panel.add(pass);
+		panel.add(userName);
+		panel.add(passWord);
 		frame.add(panel);
 		
-		frame.setSize(500, 500);
+		frame.setSize(450, 450);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
