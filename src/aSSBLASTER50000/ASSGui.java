@@ -40,7 +40,6 @@ public class ASSGui {
 		
 		//positioning
 		
-		user.
 		
 		/**user.setBounds(10, 400, 50, 20);
 		pass.setBounds(10, 170, 50, 30);
