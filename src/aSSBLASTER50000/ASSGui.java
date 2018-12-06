@@ -63,8 +63,8 @@ public class ASSGui {
 
 			
 			public void actionPerformed(ActionEvent arg0) {
-				//if() {
-					
+				//if(password is correct) {
+					frame.dispose();
 				//}
 				
 			}
