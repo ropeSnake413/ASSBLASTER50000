@@ -20,7 +20,7 @@ public class ASSGui {
 	public ASSGui() {
 		
 		//creates frame and panel
-		frame = new JFrame();
+		frame = new JFrame("Login");
 		panel = new JPanel();
 		
 		panel.setLayout(new GridBagLayout());
@@ -28,40 +28,41 @@ public class ASSGui {
 		
 		//creates the text fields
 		userName = new JTextField(20);
+		c.gridx = 1;
+		c.gridy = 0;
+		panel.add(userName, c);
+		
 		passWord = new JTextField(20);
+		c.gridx = 1;
+		c.gridy = 1;
+		panel.add(passWord, c);
 		
 		//creates the buttons
 		btnEnter = new JButton("Enter");
+		c.gridx = 0;
+		c.gridy = 2;
+		panel.add(btnEnter, c);
 		
 		//creates the labels
 		user = new JLabel("Username: ");
-		c.gridx = 0;
 		c.gridy = 0;
+		c.gridx = 0;
 		panel.add(user, c);
+		
 		pass = new JLabel("Password: ");
 		c.gridx = 0;
 		c.gridy = 1;
 		panel.add(pass, c);
+		
 		fail = new JLabel("Incorrect Password");
 		
 		//positioning
 		
 		
-		/**user.setBounds(10, 400, 50, 20);
-		pass.setBounds(10, 170, 50, 30);
 		
-		userName.setBounds(50, 225, 75, 25);
-		passWord.setBounds(50,170, 75, 25);
-		
-		panel.add(user);
-		panel.add(pass);
-		panel.add(userName);
-		panel.add(passWord);
-		**/
 		frame.setContentPane(panel);
 		
-		
-		frame.setSize(450, 450);
+		frame.setSize(350, 350);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
