@@ -32,7 +32,7 @@ public class ASSwordCheck {
 	
 	public String idCheck(String use, String pass) {
 		String sql = "SELECT id, name, username, password FROM doctors";
-		String rtn="Incorrect information";
+		String rtn="Incorrect credentials";
 
 		try {
 			Connection conn = connect();
@@ -40,11 +40,15 @@ public class ASSwordCheck {
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
+				rs.getRow();
 				String u=rs.getString(3);
 				String p=rs.getString(4);
-				
-				if(u==use && p==pass){
-					rtn="Welcome, doctor "+rs.getString(2);
+
+				if(u.equalsIgnoreCase(use)){
+					if(p.equals(pass)) {
+
+						rtn="Welcome, doctor "+rs.getString(2);
+					}
 				}
 						
 			}
