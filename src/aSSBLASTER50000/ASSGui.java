@@ -2,6 +2,8 @@ package aSSBLASTER50000;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,7 +28,7 @@ public class ASSGui {
 		panel.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		//creates the text fields
+		//creates the text fields and positions
 		userName = new JTextField(20);
 		c.gridx = 1;
 		c.gridy = 0;
@@ -37,13 +39,13 @@ public class ASSGui {
 		c.gridy = 1;
 		panel.add(passWord, c);
 		
-		//creates the buttons
+		//creates the buttons and positions
 		btnEnter = new JButton("Enter");
 		c.gridx = 0;
 		c.gridy = 2;
 		panel.add(btnEnter, c);
 		
-		//creates the labels
+		//creates the labels and positions
 		user = new JLabel("Username: ");
 		c.gridy = 0;
 		c.gridx = 0;
@@ -56,8 +58,18 @@ public class ASSGui {
 		
 		fail = new JLabel("Incorrect Password");
 		
-		//positioning
-		
+		//making the button work
+		btnEnter.addActionListener(new ActionListener(){
+
+			
+			public void actionPerformed(ActionEvent arg0) {
+				//if() {
+					
+				//}
+				
+			}
+			
+		});
 		
 		
 		frame.setContentPane(panel);
