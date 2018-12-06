@@ -66,7 +66,7 @@ public class ASSGui {
 				//if(password is correct) {
 					frame.dispose();
 				//}
-				
+				//
 			}
 			
 		});
