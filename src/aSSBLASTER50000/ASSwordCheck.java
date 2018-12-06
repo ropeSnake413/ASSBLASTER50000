@@ -2,7 +2,9 @@ package aSSBLASTER50000;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class ASSwordCheck {
 	String user, assword;
@@ -14,7 +16,7 @@ public class ASSwordCheck {
 		assword=a;
 		}
 
-	private Connection connect() {
+	public Connection connect() {
 		Connection conn = null;
 		try {
 			String url = "jdbc:sqlite:D:/SQLiteStudio/databases/doctors.db";
@@ -26,4 +28,29 @@ public class ASSwordCheck {
 		}
 		return conn;
 	}
+	
+	
+	public void refresh() {
+		String sql = "SELECT iD, fName, lName FROM student";
+		
+		try {
+			Connection conn = connect();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+
+				
+				//add row to model
+				model.addRow(row);
+						
+			}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
 }
