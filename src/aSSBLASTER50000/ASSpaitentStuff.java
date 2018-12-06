@@ -1,24 +1,25 @@
 package aSSBLASTER50000;
 
+//yey imports
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-public class ASSwordCheck {
-	String user, assword;
-	
+public class ASSpaitentStuff {
 	
 	//spicy constructor
-	public ASSwordCheck() {
-
-		}
-
+	public ASSpaitentStuff() {
+		
+	}
+	
+	
 	
 	//CONNECTS TO THE SQL DATABASE
 	private Connection connect() {
-		Connection conn = null;
+		Connection conn=null;
 		try {
 			String url = "jdbc:sqlite:D:/SQLiteStudio/databases/doctors.db";
 			conn = DriverManager.getConnection(url);
@@ -28,34 +29,31 @@ public class ASSwordCheck {
 			System.out.println(e.getMessage());
 		}
 		return conn;
+		
 	}
 	
 	
-	//checks the supplied credentials to see if they match any in the database
-	//returns an error if bad credentials are input
-	//returns a welcome screen if they are good
-	//password is case sensitive, user is not
-	public String idCheck(String use, String pass) {
-		String sql = "SELECT id, name, username, password FROM doctors";
-		String rtn="Bad credentials";
+	//shoves all the paitent info into an array list for easy putting into combo box
+	public ArrayList toCombo(int docc) {
+		ArrayList<ComboObject> obj=new ArrayList<ComboObject>();
+		String sql = "SELECT id, name, phone, docid FROM patients";
 
+		//does the connect
 		try {
 			Connection conn = connect();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
+				int i=0;
 				rs.getRow();
-				String u=rs.getString(3);
-				String p=rs.getString(4);
-
-				if(u.equalsIgnoreCase(use)){
-					if(p.equals(pass)) {
-
-						rtn="Welcome, doctor "+rs.getString(2);
-					}
+				if(rs.getInt(4)==docc) {
+					String x=rs.getString(2);
+					System.out.println(x);
+					String y=rs.getString(3);
+					System.out.println(y);
+					obj.add(new ComboObject(x,y));
 				}
-						
 			}
 			
 			rs.close();
@@ -63,8 +61,11 @@ public class ASSwordCheck {
 			conn.close();
 			
 		}catch(SQLException e) {
+			System.out.println("ERROR");
 			System.out.println(e.getMessage());
 		}
-		return rtn;
+		
+		return obj;
+		
 	}
 }
