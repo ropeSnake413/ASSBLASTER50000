@@ -11,9 +11,8 @@ public class ASSwordCheck {
 	
 	
 
-	public ASSwordCheck(String u, String a) {
-		user=u;
-		assword=a;
+	public ASSwordCheck() {
+
 		}
 
 	private Connection connect() {
