@@ -6,7 +6,7 @@ public class ASSBlaster50000 {
 		ASSGui blaster = new ASSGui();
 		ASSwordCheck ass=new ASSwordCheck("user", "password");
 		System.out.println("|||||||||||||||||||||||");
-		System.out.println(ass.idCheck("Strink", "owo"));
+		System.out.println(ass.idCheck("xflyyer", "pass"));
 		//help
 	}
 
