@@ -16,7 +16,7 @@ public class ASSwordCheck {
 		assword=a;
 		}
 
-	public Connection connect() {
+	private Connection connect() {
 		Connection conn = null;
 		try {
 			String url = "jdbc:sqlite:D:/SQLiteStudio/databases/doctors.db";
@@ -30,19 +30,22 @@ public class ASSwordCheck {
 	}
 	
 	
-	public void refresh() {
-		String sql = "SELECT iD, fName, lName FROM student";
-		
+	public String idCheck(String use, String pass) {
+		String sql = "SELECT id, name, username, password FROM doctors";
+		String rtn="Incorrect information";
+
 		try {
 			Connection conn = connect();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
-
+				String u=rs.getString(3);
+				String p=rs.getString(4);
 				
-				//add row to model
-				model.addRow(row);
+				if(u==use && p==pass){
+					rtn="Welcome, doctor "+rs.getString(2);
+				}
 						
 			}
 			
@@ -53,4 +56,6 @@ public class ASSwordCheck {
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return rtn;
+	}
 }
