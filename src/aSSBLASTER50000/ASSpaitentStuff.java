@@ -68,4 +68,15 @@ public class ASSpaitentStuff {
 		return obj;
 		
 	}
+	
+	
+	public void addPaitent(String n, String p) {
+		String sql="INSERT INTO paitents(name, phone, docid) VALUES (?, ?, ?)";
+		
+		try {
+			
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
