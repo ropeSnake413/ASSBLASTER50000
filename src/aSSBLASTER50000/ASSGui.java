@@ -64,7 +64,7 @@ public class ASSGui {
 
 			
 			public void actionPerformed(ActionEvent arg0) {
-				ASSwordCheck assword = new ASSwordCheck(null, null);
+				ASSwordCheck assword = new ASSwordCheck();
 				username = userName.getText();
 				password = passWord.getText();
 				
