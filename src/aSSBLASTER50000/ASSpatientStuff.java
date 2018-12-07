@@ -3,15 +3,16 @@ package aSSBLASTER50000;
 //yey imports
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class ASSpaitentStuff {
+public class ASSpatientStuff {
 	
 	//spicy constructor
-	public ASSpaitentStuff() {
+	public ASSpatientStuff() {
 		
 	}
 	
@@ -43,7 +44,7 @@ public class ASSpaitentStuff {
 			Connection conn = connect();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			
+			//cycles thorugh the doctors patients and shoves all their stuff into an array list for easy use
 			while(rs.next()) {
 				int i=0;
 				rs.getRow();
@@ -70,10 +71,21 @@ public class ASSpaitentStuff {
 	}
 	
 	
-	public void addPaitent(String n, String p) {
-		String sql="INSERT INTO paitents(name, phone, docid) VALUES (?, ?, ?)";
+	public void addPaitent(String n, String p, int d) {
+		String sql="INSERT INTO patients(name, phone, docid) VALUES (?, ?, ?)";
 		
 		try {
+			Connection conn = connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ps.setString(1, n);
+			ps.setString(2, p);
+			ps.setInt(3,d);
+			
+			ps.executeUpdate();
+			
+			ps.close();
+			conn.close();
 			
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());

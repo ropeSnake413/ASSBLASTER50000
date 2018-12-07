@@ -5,17 +5,27 @@ import java.util.ArrayList;
 public class ASSBlaster50000 {
 
 	public static void main(String[] args) {
-		
+		String tstu="class";
+		String tstp="767645";
 		ASSGui blaster = new ASSGui();
 		ASSwordCheck ass=new ASSwordCheck();
-		ASSpaitentStuff pat=new ASSpaitentStuff();
+		ASSpatientStuff pat=new ASSpatientStuff();
 		System.out.println("|||||||||||||||||||||||");
-		System.out.println(ass.idCheck("class", "767645"));
+		int d=ass.idCheck(tstu, tstp);
 		
-		ArrayList<ComboObject> obj=new ArrayList<ComboObject>();
-		obj=pat.toCombo(1);
-		System.out.println(obj.get(1).rtnAll());
-		System.out.println(obj.get(0).rtnAll());
+		//##########################
+		final int doc=d;
+		//##########################
+	
+		System.out.println("[][][][]"+doc);
+		//ArrayList<ComboObject> obj=new ArrayList<ComboObject>();
+		//obj=pat.toCombo(doc);
+		
+		/**
+		 * FINISHED DONT TOUCH ON DEATH PENALTY
+		 * pat.addPaitent("hella jeff", "420-6969", doc);
+		 */
+
 
 		//help
 	}

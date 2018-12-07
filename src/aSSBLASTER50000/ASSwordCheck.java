@@ -35,9 +35,9 @@ public class ASSwordCheck {
 	//returns an error if bad credentials are input
 	//returns a welcome screen if they are good
 	//password is case sensitive, user is not
-	public String idCheck(String use, String pass) {
+	public int idCheck(String use, String pass) {
 		String sql = "SELECT id, name, username, password FROM doctors";
-		String rtn="Bad credentials";
+		int rtn=1;
 
 		try {
 			Connection conn = connect();
@@ -52,7 +52,7 @@ public class ASSwordCheck {
 				if(u.equalsIgnoreCase(use)){
 					if(p.equals(pass)) {
 
-						rtn="Welcome, doctor "+rs.getString(2);
+						rtn=rs.getInt(1);
 					}
 				}
 						
@@ -65,6 +65,7 @@ public class ASSwordCheck {
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}
+
 		return rtn;
 	}
 }
