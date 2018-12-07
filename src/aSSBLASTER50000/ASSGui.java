@@ -18,6 +18,7 @@ public class ASSGui {
 	JFrame frame;
 	JButton btnEnter;
 	JTextField userName, passWord;
+	String username, password;
 	
 	public ASSGui() {
 		
@@ -56,17 +57,27 @@ public class ASSGui {
 		c.gridy = 1;
 		panel.add(pass, c);
 		
-		fail = new JLabel("Incorrect Password");
+		
 		
 		//making the button work
 		btnEnter.addActionListener(new ActionListener(){
 
 			
 			public void actionPerformed(ActionEvent arg0) {
+				ASSwordCheck assword = new ASSwordCheck(null, null);
+				username = userName.getText();
+				password = passWord.getText();
+				
 				//if(password is correct) {
 					frame.dispose();
+					ASSMainGui assblast = new ASSMainGui();
+				//}else if(password is not correct){
+					fail = new JLabel("Incorrect Password");
+					c.gridx = 1;
+					c.gridy = 2;
+					panel.add(fail, c);
 				//}
-				//
+				
 			}
 			
 		});
