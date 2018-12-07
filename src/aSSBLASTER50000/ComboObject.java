@@ -6,7 +6,7 @@ public class ComboObject {
 	
 	//lovely constructor
 	public ComboObject(String n, String p) {
-		name=p;
+		name=n;
 		phone=p;
 	}
 	
