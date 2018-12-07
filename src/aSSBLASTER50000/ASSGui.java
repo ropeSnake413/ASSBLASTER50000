@@ -67,16 +67,17 @@ public class ASSGui {
 				ASSwordCheck assword = new ASSwordCheck();
 				username = userName.getText();
 				password = passWord.getText();
+				String rtn=assword.idCheck(username, password);
 				
-				//if(password is correct) {
+				if(!(rtn.equals("Bad credentials"))) {
 					frame.dispose();
 					ASSMainGui assblast = new ASSMainGui();
-				//}else if(password is not correct){
+				}else if(rtn.equals("Bad credentials")){
 					fail = new JLabel("Incorrect Password");
 					c.gridx = 1;
 					c.gridy = 2;
 					panel.add(fail, c);
-				//}
+				}
 				
 			}
 			
