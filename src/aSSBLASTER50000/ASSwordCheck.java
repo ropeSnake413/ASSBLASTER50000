@@ -37,7 +37,7 @@ public class ASSwordCheck {
 	//password is case sensitive, user is not
 	public int idCheck(String use, String pass) {
 		String sql = "SELECT id, name, username, password FROM doctors";
-		int rtn=1;
+		int rtn=-1;
 
 		try {
 			Connection conn = connect();

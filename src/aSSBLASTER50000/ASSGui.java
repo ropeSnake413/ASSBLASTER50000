@@ -1,16 +1,22 @@
 package aSSBLASTER50000;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
+
+import javax.swing.border.*;
 
 public class ASSGui {
 	
@@ -20,7 +26,9 @@ public class ASSGui {
 	JButton btnEnter;
 	JTextField userName, passWord;
 	String username, password;
-	
+	Font myFont = new Font("Comic Sans MS", Font.BOLD, 12);
+	Border raisedbevel = BorderFactory.createRaisedBevelBorder();
+
 	public ASSGui() {
 		
 		//creates frame and panel
@@ -43,17 +51,24 @@ public class ASSGui {
 		
 		//creates the buttons and positions
 		btnEnter = new JButton("Enter");
+		btnEnter.setFont(myFont);
 		c.gridx = 0;
 		c.gridy = 2;
 		panel.add(btnEnter, c);
 		
 		//creates the labels and positions
 		user = new JLabel("Username: ");
+		user.setFont(myFont);
+		user.setBorder(raisedbevel);
 		c.gridy = 0;
 		c.gridx = 0;
 		panel.add(user, c);
 		
 		pass = new JLabel("Password: ");
+		pass.setFont(myFont);
+		pass.setBorder(raisedbevel);
+
+
 		c.gridx = 0;
 		c.gridy = 1;
 		panel.add(pass, c);
@@ -69,17 +84,19 @@ public class ASSGui {
 				username = userName.getText();
 				password = passWord.getText();
 				int rtn=assword.idCheck(username, password);
-				
-				//if(rtn!=0) {
+				////////////////////////
+				if(rtn>=0) {
 					frame.dispose();
 					ASSMainGui assblast = new ASSMainGui();
-				//}else if(rtn==0){
+				}else if(rtn<0){
 					fail = new JLabel("Incorrect Password");
 					c.gridx = 1;
 					c.gridy = 2;
+					fail.setFont(myFont);
 					panel.add(fail, c);
-				//}
-				
+		
+				}
+				/////////////////////////
 			}
 			
 		});
