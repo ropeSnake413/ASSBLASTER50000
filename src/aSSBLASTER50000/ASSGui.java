@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class ASSGui {
@@ -35,7 +36,7 @@ public class ASSGui {
 		c.gridy = 0;
 		panel.add(userName, c);
 		
-		passWord = new JTextField(20);
+		passWord = new JPasswordField(20);
 		c.gridx = 1;
 		c.gridy = 1;
 		panel.add(passWord, c);
