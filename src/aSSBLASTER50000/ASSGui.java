@@ -7,7 +7,9 @@ import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.print.DocFlavor.URL;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,6 +32,10 @@ public class ASSGui {
 	Border raisedbevel = BorderFactory.createRaisedBevelBorder();
 
 	public ASSGui() {
+		/////////////////////////////////////////////
+		ImageIcon imageIcon = new ImageIcon("D:/giphy.gif");
+		//////////////////////////////////////////////////
+		
 		
 		//creates frame and panel
 		frame = new JFrame("Login");
@@ -48,6 +54,16 @@ public class ASSGui {
 		c.gridx = 1;
 		c.gridy = 1;
 		panel.add(passWord, c);
+		
+		
+		///////////////////////////////////////
+		JLabel pepe = new JLabel(imageIcon);
+		c.gridx=2;
+		c.gridy=0;
+		panel.add(pepe, c);
+		//////////////////////////////////////////
+		
+		
 		
 		//creates the buttons and positions
 		btnEnter = new JButton("Enter");
