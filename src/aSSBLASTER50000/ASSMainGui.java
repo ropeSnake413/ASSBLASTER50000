@@ -22,7 +22,7 @@ public class ASSMainGui {
 	public ASSMainGui(int DOCTOR) {
 		
 		//creats frame and panel
-		mainFrame = new JFrame("Main");
+		mainFrame = new JFrame(" " + DOCTOR);
 		mainPanel = new JPanel(new GridBagLayout());
 		menuPanel = new JPanel(new GridBagLayout());
 		infoPanel = new JPanel(new GridBagLayout());
