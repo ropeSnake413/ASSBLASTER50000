@@ -57,10 +57,7 @@ public class ASSGui {
 		
 		
 		///////////////////////////////////////
-		JLabel pepe = new JLabel(imageIcon);
-		c.gridx=2;
-		c.gridy=0;
-		panel.add(pepe, c);
+		
 		//////////////////////////////////////////
 		
 		
