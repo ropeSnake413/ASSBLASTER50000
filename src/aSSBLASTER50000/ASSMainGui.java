@@ -19,7 +19,7 @@ public class ASSMainGui {
 	JLabel label;
 	
 	
-	public ASSMainGui() {
+	public ASSMainGui(int DOCTOR) {
 		
 		//creats frame and panel
 		mainFrame = new JFrame("Main");

@@ -100,7 +100,7 @@ public class ASSGui {
 				////////////////////////
 				//if(rtn>=0) {
 					frame.dispose();
-					ASSMainGui assblast = new ASSMainGui();
+					ASSMainGui assblast = new ASSMainGui(rtn);
 				//}else if(rtn<0){
 					fail = new JLabel("Incorrect Password");
 					c.gridx = 1;
