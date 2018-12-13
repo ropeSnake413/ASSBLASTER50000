@@ -1,5 +1,6 @@
 package aSSBLASTER50000;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -10,85 +11,87 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ASSMainGui {
 
 	JFrame mainFrame;
-	JPanel mainPanel, menuPanel, infoPanel;
+	JPanel panel;
 	JButton btnPatients, btnNewPatient, btnPatientVisits, btnNewVisit;
 	JLabel label;
+	JScrollPane scroll;
+	JTable table;
 	
+	Object[] row;
+	DefaultTableModel model;
 	
 	public ASSMainGui(int DOCTOR) {
 		
 		//creats frame and panel
 		mainFrame = new JFrame(" " + DOCTOR);
-		mainPanel = new JPanel(new GridBagLayout());
-		menuPanel = new JPanel(new GridBagLayout());
-		infoPanel = new JPanel(new GridBagLayout());
+		panel = new JPanel(new GridBagLayout());
+		table = new JTable();
 		
-		mainPanel.setLayout(new GridBagLayout());
+		//create table
+		Object[] columns = {"id, name, phone, docid"};
+		model = new DefaultTableModel();
+		model.setColumnIdentifiers(columns);
+		
+		table.setModel(model);
+		table.setRowHeight(30);
+		
+		//layout
+		panel.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
 		ImageIcon imageIcon = new ImageIcon("D:/giphy.gif");
 		
-		//creates the buttons and positions
+		//creates the buttons and positions///
+		JLabel pepe = new JLabel(imageIcon);//
+		//c.gridx = 1;						//
+		//c.gridy = 0;						//
+		//panel.add(pepe, c);				//
+		//////////////////////////////////////
 		
-		JLabel pepe = new JLabel(imageIcon);
-		c.gridx = 1;
-		c.gridy = 0;
-		
-		
-		
-		infoPanel.add(pepe, c);
 		
 		btnPatients = new JButton("  Doctor's Patients   ");
 		c.gridx = 0;
 		c.gridy = 0;
 		
-		
-		
+		//shows list of patients for the doctor
 		btnPatients.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
-				
+				JScrollPane pane = new JScrollPane(table);
+				c.gridx = 1;
+				c.gridy = 0;
+				mainFrame.add(pane);
 				
 			}
 			
 		});
 		
-		menuPanel.add(btnPatients, c);
+		panel.add(btnPatients, c);
 		
 		
-		btnNewPatient = new JButton("       New Patient       ");
+		btnNewPatient = new JButton("       New Patient      ");
 		c.gridx = 0;
 		c.gridy = 1;
-		
-		menuPanel.add(btnNewPatient, c);
+		panel.add(btnNewPatient, c);
 		
 		btnPatientVisits = new JButton("Patient Visit Record");
 		c.gridx = 0;
 		c.gridy = 2;
-	
-		menuPanel.add(btnPatientVisits, c);
+		panel.add(btnPatientVisits, c);
 		
 		btnNewVisit = new JButton("         New Visit          ");
 		c.gridx = 0;
 		c.gridy = 3;
+		panel.add(btnNewVisit, c);
 		
-		
-		menuPanel.add(btnNewVisit, c);
-		
-		c.gridx = 0;
-		c.gridy = 0;
-
-		mainPanel.add(menuPanel, c);
-		
-		c.gridx = 1;
-		c.gridy = 0;
-		
-		mainPanel.add(infoPanel, c);
-		mainFrame.setContentPane(mainPanel);
+		mainFrame.setContentPane(panel);
 		
 		//making the frame
 		mainFrame.setSize(852,480);
