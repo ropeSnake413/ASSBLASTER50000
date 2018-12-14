@@ -29,9 +29,12 @@ public class ASSvisits {
 		
 	}
 	
-	public ArrayList toList() {
+	public ArrayList toList(String patName) {
 		ArrayList<ComboObjectASS> list=new ArrayList<ComboObjectASS>();
 		String sql = "SELECT visitid, date, patientid, diagnosis, medicine FROM visits";
+		int ID=findPatId(patName);
+		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
+
 		try {
 			Connection conn = connect();
 			Statement stmt = conn.createStatement();
@@ -45,7 +48,7 @@ public class ASSvisits {
 					//System.out.println(x);
 					String y=rs.getString(3);
 					//System.out.println(y);
-					obj.add(new ComboObject(x,y));
+					//new
 				}
 			}
 			
@@ -68,7 +71,6 @@ public class ASSvisits {
 		while(rs.next()) {
 			if(rs.getString(2).equalsIgnoreCase(name)) {
 				ID=rs.getInt(1);
-				System.out.println("<><><><><><>"+ID);
 			}
 		}
 		}catch(SQLException e) {
