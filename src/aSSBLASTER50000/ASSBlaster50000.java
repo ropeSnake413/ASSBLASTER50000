@@ -5,19 +5,19 @@ import java.util.ArrayList;
 public class ASSBlaster50000 {
 
 	public static void main(String[] args) {
-		String tstu="class";
-		String tstp="767645";
+		String tstu="ropeSnake413";
+		String tstp="pass";
 		ASSGui blaster = new ASSGui();
 		ASSwordCheck ass=new ASSwordCheck();
 		ASSpatientStuff pat=new ASSpatientStuff();
+		ASSvisits vis=new ASSvisits();
 		System.out.println("|||||||||||||||||||||||");
 		int d=ass.idCheck(tstu, tstp);
-		
-		//##########################
-		final int doc=d;
-		//##########################
+		pat.toCombo(4);
+		vis.findPatId("aspeed");
+
 	
-		System.out.println("[][][][]"+doc);
+
 		//ArrayList<ComboObject> obj=new ArrayList<ComboObject>();
 		//obj=pat.toCombo(doc);
 		

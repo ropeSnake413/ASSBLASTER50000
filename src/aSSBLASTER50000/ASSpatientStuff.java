@@ -50,12 +50,14 @@ public class ASSpatientStuff {
 				rs.getRow();
 				if(rs.getInt(4)==docc) {
 					String x=rs.getString(2);
-					System.out.println(x);
+					//System.out.println(x);
 					String y=rs.getString(3);
-					System.out.println(y);
+					//System.out.println(y);
 					obj.add(new ComboObject(x,y));
 				}
 			}
+			
+			System.out.println(obj.get(0).rtnAll());
 			
 			rs.close();
 			stmt.close();
