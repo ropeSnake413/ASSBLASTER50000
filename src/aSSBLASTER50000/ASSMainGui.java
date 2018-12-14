@@ -31,7 +31,7 @@ public class ASSMainGui {
 		
 		//creats frame and panel
 		mainFrame = new JFrame(" " + DOCTOR);
-		panel = new JPanel(new GridBagLayout());
+		panel = new JPanel();
 		table = new JTable();
 		
 		//create table
@@ -69,7 +69,7 @@ public class ASSMainGui {
 				JScrollPane pane = new JScrollPane(table);
 			//	c.gridx = 1;
 			//	c.gridy = 0;
-				//mainFrame.add(pane, c);
+			//mainFrame.add(pane, c);
 				
 			}
 			
@@ -96,13 +96,14 @@ public class ASSMainGui {
 		//c.gridheight = 1;
 		//panel.add(btnNewVisit, c);
 		
-		btnPatients.setBounds(150, 220, 300, 25);
-		btnNewPatient.setBounds(150, 265, 100, 25);
+		btnPatients.setLocation(100, 100);
+		btnPatients.setSize(30, 10);
+		//btnNewPatient.setBounds(150, 265, 100, 25);
 		
-		mainFrame.setLayout(null);
+		//mainFrame.setLayout(null);
 		
 		panel.add(btnPatients);
-		panel.add(btnNewPatient);
+		//panel.add(btnNewPatient);
 		mainFrame.setContentPane(panel);
 		
 		//making the frame
