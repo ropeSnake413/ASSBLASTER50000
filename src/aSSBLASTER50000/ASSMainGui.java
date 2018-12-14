@@ -34,6 +34,8 @@ public class ASSMainGui {
 		panel = new JPanel();
 		table = new JTable();
 		
+		mainFrame.setLayout(null);
+		
 		//create table
 		Object[] columns = {"id, name, phone, docid"};
 		model = new DefaultTableModel();
@@ -100,7 +102,7 @@ public class ASSMainGui {
 		btnPatients.setSize(30, 10);
 		//btnNewPatient.setBounds(150, 265, 100, 25);
 		
-		//mainFrame.setLayout(null);
+		
 		
 		panel.add(btnPatients);
 		//panel.add(btnNewPatient);
