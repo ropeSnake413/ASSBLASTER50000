@@ -43,54 +43,66 @@ public class ASSMainGui {
 		table.setRowHeight(30);
 		
 		//layout
-		panel.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
+		//panel.setLayout(new GridBagLayout());
+		//GridBagConstraints c = new GridBagConstraints();
 		
 		ImageIcon imageIcon = new ImageIcon("D:/giphy.gif");
 		
 		//creates the buttons and positions///
 		JLabel pepe = new JLabel(imageIcon);//
 		//c.gridx = 1;						//
-		//c.gridy = 0;						//
+		//c.gridy = 0;
+		//c.gridheight = 4;
 		//panel.add(pepe, c);				//
 		//////////////////////////////////////
 		
 		
 		btnPatients = new JButton("  Doctor's Patients   ");
-		c.gridx = 0;
-		c.gridy = 0;
+		//c.gridx = 0;
+		//c.gridy = 0;
+		//c.gridheight = 1;
 		
 		//shows list of patients for the doctor
 		btnPatients.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				JScrollPane pane = new JScrollPane(table);
-				c.gridx = 1;
-				c.gridy = 0;
-				mainFrame.add(pane);
+			//	c.gridx = 1;
+			//	c.gridy = 0;
+				//mainFrame.add(pane, c);
 				
 			}
 			
 		});
 		
-		panel.add(btnPatients, c);
-		
+	//	panel.add(btnPatients, c);
+	//	
 		
 		btnNewPatient = new JButton("       New Patient      ");
-		c.gridx = 0;
-		c.gridy = 1;
-		panel.add(btnNewPatient, c);
-		
+		//c.gridx = 0;
+		//c.gridy = 1;
+		//c.gridheight = 1;
+		//panel.add(btnNewPatient, c);
+		//
 		btnPatientVisits = new JButton("Patient Visit Record");
-		c.gridx = 0;
-		c.gridy = 2;
-		panel.add(btnPatientVisits, c);
+		//c.gridx = 0;
+	//	c.gridy = 2;
+		//c.gridheight = 1;
+	//	panel.add(btnPatientVisits, c);
 		
 		btnNewVisit = new JButton("         New Visit          ");
-		c.gridx = 0;
-		c.gridy = 3;
-		panel.add(btnNewVisit, c);
+		//c.gridx = 0;
+		//c.gridy = 3;
+		//c.gridheight = 1;
+		//panel.add(btnNewVisit, c);
 		
+		btnPatients.setBounds(150, 220, 300, 25);
+		btnNewPatient.setBounds(150, 265, 100, 25);
+		
+		mainFrame.setLayout(null);
+		
+		panel.add(btnPatients);
+		panel.add(btnNewPatient);
 		mainFrame.setContentPane(panel);
 		
 		//making the frame
