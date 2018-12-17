@@ -2,6 +2,7 @@ package aSSBLASTER50000;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -43,12 +44,14 @@ public class ASSvisits {
 			while(rs.next()) {
 				int i=0;
 				rs.getRow();
-				if(rs.getInt(4)==ID) {
+				if(rs.getInt(3)==ID) {
 					String x=rs.getString(2);
-					//System.out.println(x);
-					String y=rs.getString(3);
-					//System.out.println(y);
-					//new
+					System.out.println(x);
+					String y=rs.getString(4);
+					System.out.println(y);
+					String z=rs.getString(5);
+					System.out.println(z);
+					obj.add(new ComboObjectASS(x, y, z));
 				}
 			}
 			
@@ -56,8 +59,31 @@ public class ASSvisits {
 			System.out.println(e.getMessage());
 		}
 
-		return list;
+		return obj;
 		
+	}
+	
+	
+	public void addVisit(String pname, String date, String diag, String prsp) {
+		String sql="INSERT INTO visits(patientid, date, diagnosis, medicine) VALUES (?, ?, ?, ?)";
+		int patid=findPatId(pname);
+		//String patid=patidee+"";try {
+		try {
+			Connection conn = connect();
+			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ps.setInt(1, patid);
+			ps.setString(2, date);
+			ps.setString(3, diag);
+			ps.setString(4, prsp);
+			
+			ps.executeUpdate();
+			
+			ps.close();
+			conn.close();
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	

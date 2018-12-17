@@ -15,9 +15,20 @@ public class ASSBlaster50000 {
 		int d=ass.idCheck(tstu, tstp);
 		pat.toCombo(4);
 		vis.findPatId("aspeed");
+		
+		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
+		obj=vis.toList("aspeed");
+		System.out.println(obj.get(1).rtnAll());
 
-	
-
+		/*
+		*vis.addVisit("aspeed", "oct 3", "YOUR UBER IS HERE", "REEEEe10");
+		*obj=vis.toList("aspeed");
+		*for(int i=0; i<obj.size(); i++) {
+		*	System.out.println(obj.get(i).rtnAll());
+		*}
+		*/
+		
+		
 		//ArrayList<ComboObject> obj=new ArrayList<ComboObject>();
 		//obj=pat.toCombo(doc);
 		
