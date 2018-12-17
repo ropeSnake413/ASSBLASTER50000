@@ -71,6 +71,7 @@ public class ASSMainGui {
 				JScrollPane pane = new JScrollPane(table);
 				c.gridx = 1;
 				c.gridy = 0;
+				c.gridheight = 3;
 				mainFrame.add(pane, c);
 				
 			}
