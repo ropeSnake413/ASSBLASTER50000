@@ -1,10 +1,12 @@
 package aSSBLASTER50000;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -29,6 +31,10 @@ public class ASSMainGui {
 	
 	public ASSMainGui(int DOCTOR) {
 		
+		//gets patientstuff
+		ASSpatientStuff pat=new ASSpatientStuff();
+		
+		
 		//creats frame and panel
 		mainFrame = new JFrame(" " + DOCTOR);
 		panel = new JPanel();
@@ -37,7 +43,7 @@ public class ASSMainGui {
 		mainFrame.setLayout(null);
 		
 		//create table
-		Object[] columns = {"id, name, phone, docid"};
+		Object[] columns = {"name","phone"};
 		model = new DefaultTableModel();
 		model.setColumnIdentifiers(columns);
 		
@@ -69,11 +75,27 @@ public class ASSMainGui {
 			
 			public void actionPerformed(ActionEvent arg0) {
 				JScrollPane pane = new JScrollPane(table);
+				Dimension d=new Dimension(200, 200);
+				pane.setMinimumSize(d);
 				c.gridx = 1;
 				c.gridy = 0;
 				c.gridheight = 3;
-				mainFrame.add(pane, c);
 				
+				
+				
+				row = new Object[2];
+				model.setRowCount(0);
+				ArrayList<ComboObject> patient=new ArrayList<ComboObject>();
+
+				patient=pat.toCombo(DOCTOR);
+				for(int k=0; k<patient.size(); k++) {
+					row[0]=patient.get(k).rtnN();
+					row[1]=patient.get(k).rtnP();
+					model.addRow(row);
+				}
+				
+				mainFrame.add(pane, c);
+				mainFrame.setVisible(true);
 			}
 			
 		});
