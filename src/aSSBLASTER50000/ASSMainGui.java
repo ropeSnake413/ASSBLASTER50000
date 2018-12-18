@@ -36,6 +36,8 @@ public class ASSMainGui {
 		
 		mainFrame.setLayout(null);
 		
+		
+		
 		//create table
 		Object[] columns = {"id, name, phone, docid"};
 		model = new DefaultTableModel();
