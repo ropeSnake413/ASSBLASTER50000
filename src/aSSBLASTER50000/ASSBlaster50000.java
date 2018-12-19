@@ -5,28 +5,22 @@ import java.util.ArrayList;
 public class ASSBlaster50000 {
 
 	public static void main(String[] args) {
-		String tstu="ropeSnake413";
-		String tstp="pass";
+		//String tstu="ropeSnake413";
+		//String tstp="pass";
+
 		ASSGui blaster = new ASSGui();
-		ASSwordCheck ass=new ASSwordCheck();
-		ASSpatientStuff pat=new ASSpatientStuff();
-		ASSvisits vis=new ASSvisits();
-		System.out.println("|||||||||||||||||||||||");
-		int d=ass.idCheck(tstu, tstp);
-		pat.toCombo(4);
-		vis.findPatId("aspeed");
+		//ASSwordCheck ass=new ASSwordCheck();
+		//
+		//ASSvisits vis=new ASSvisits();
+		//System.out.println("|||||||||||||||||||||||");
+		//int d=ass.idCheck(tstu, tstp);
+	//	pat.toCombo(4);
+		//vis.findPatId("aspeed");
 		
-		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
-		obj=vis.toList("aspeed");
-		System.out.println(obj.get(1).rtnAll());
-		pat.addPaitent("ass", "1324243", 1);
-		pat.addPaitent("gerrd", "51255", 1);
-		pat.addPaitent("freed", "1531235", 1);
-		pat.addPaitent("grededr", "12354443", 1);
-		pat.addPaitent("sans undertale", "434343556", 1);
-		pat.addPaitent("weeder", "2824575", 1);
-		pat.addPaitent("wassre", "82586385", 1);
-		pat.addPaitent("awderd", "2742346", 1);
+		//ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
+		//obj=vis.toList("aspeed");
+		//System.out.println(obj.get(1).rtnAll());
+
 
 
 

@@ -98,17 +98,20 @@ public class ASSGui {
 				password = passWord.getText();
 				int rtn=assword.idCheck(username, password);
 				////////////////////////
-				//if(rtn>=0) {
+				if(rtn>=0) {
 					frame.dispose();
-					ASSMainGui assblast = new ASSMainGui(rtn);
-				//}else if(rtn<0){
+					//CHANGE BACK TO NOT A THING
+					//rtn=1;
+					GUIAGAIN gui=new GUIAGAIN(rtn);
+					//ASSMainGui assblast = new ASSMainGui(rtn);
+				}else if(rtn<0){
 					fail = new JLabel("Incorrect Password");
 					c.gridx = 1;
 					c.gridy = 2;
 					fail.setFont(myFont);
 					panel.add(fail, c);
 		
-				//}
+				}
 				/////////////////////////
 			}
 			
