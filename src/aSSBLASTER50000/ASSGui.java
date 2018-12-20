@@ -100,14 +100,11 @@ public class ASSGui {
 				////////////////////////
 				if(rtn>=0) {
 					frame.dispose();
-<<<<<<< HEAD
-					ASSMainGui assblast = new ASSMainGui(rtn);
-=======
+					//ASSMainGui assblast = new ASSMainGui(rtn);
 					//CHANGE BACK TO NOT A THING
 					//rtn=1;
 					GUIAGAIN gui=new GUIAGAIN(rtn);
 					//ASSMainGui assblast = new ASSMainGui(rtn);
->>>>>>> branch 'master' of https://github.com/ropeSnake413/ASSBLASTER50000.git
 				}else if(rtn<0){
 					fail = new JLabel("Incorrect Password");
 					c.gridx = 1;
