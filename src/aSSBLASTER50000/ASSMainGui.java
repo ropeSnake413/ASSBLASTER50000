@@ -51,12 +51,16 @@ public class ASSMainGui {
 		panel.setBackground(Color.BLUE);
 		
 		
+<<<<<<< HEAD
+		
+=======
 		Dimension dime2=new Dimension(500, 480);
 		panel2.setSize(dime2);
 		panel2.setBackground(Color.RED);
 		
 		mainFrame.setLayout(new GridBagLayout());
 
+>>>>>>> branch 'master' of https://github.com/ropeSnake413/ASSBLASTER50000.git
 		//create table
 		Object[] columns = {"name","phone"};
 		model = new DefaultTableModel();

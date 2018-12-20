@@ -17,11 +17,18 @@ public class ASSBlaster50000 {
 	//	pat.toCombo(4);
 		//vis.findPatId("aspeed");
 		
+<<<<<<< HEAD
+		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
+		obj=vis.toList("aspeed");
+		System.out.println(obj.get(1).rtnAll());
+		
+=======
 		//ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
 		//obj=vis.toList("aspeed");
 		//System.out.println(obj.get(1).rtnAll());
 
 
+>>>>>>> branch 'master' of https://github.com/ropeSnake413/ASSBLASTER50000.git
 
 
 		/*
