@@ -5,21 +5,30 @@ import java.util.ArrayList;
 public class ASSBlaster50000 {
 
 	public static void main(String[] args) {
-		String tstu="ropeSnake413";
-		String tstp="pass";
+		//String tstu="ropeSnake413";
+		//String tstp="pass";
+
 		ASSGui blaster = new ASSGui();
-		ASSwordCheck ass=new ASSwordCheck();
-		ASSpatientStuff pat=new ASSpatientStuff();
-		ASSvisits vis=new ASSvisits();
-		System.out.println("|||||||||||||||||||||||");
-		int d=ass.idCheck(tstu, tstp);
-		pat.toCombo(4);
-		vis.findPatId("aspeed");
+		//ASSwordCheck ass=new ASSwordCheck();
+		//
+		//ASSvisits vis=new ASSvisits();
+		//System.out.println("|||||||||||||||||||||||");
+		//int d=ass.idCheck(tstu, tstp);
+	//	pat.toCombo(4);
+		//vis.findPatId("aspeed");
 		
+<<<<<<< HEAD
 		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
 		obj=vis.toList("aspeed");
 		System.out.println(obj.get(1).rtnAll());
 		
+=======
+		//ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
+		//obj=vis.toList("aspeed");
+		//System.out.println(obj.get(1).rtnAll());
+
+
+>>>>>>> branch 'master' of https://github.com/ropeSnake413/ASSBLASTER50000.git
 
 
 		/*

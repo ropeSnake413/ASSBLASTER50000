@@ -57,7 +57,6 @@ public class ASSpatientStuff {
 				}
 			}
 			
-			System.out.println(obj.get(0).rtnAll());
 			
 			rs.close();
 			stmt.close();
