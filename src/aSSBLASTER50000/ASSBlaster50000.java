@@ -19,15 +19,7 @@ public class ASSBlaster50000 {
 		ArrayList<ComboObjectASS> obj=new ArrayList<ComboObjectASS>();
 		obj=vis.toList("aspeed");
 		System.out.println(obj.get(1).rtnAll());
-		pat.addPaitent("ass", "1324243", 1);
-		pat.addPaitent("gerrd", "51255", 1);
-		pat.addPaitent("freed", "1531235", 1);
-		pat.addPaitent("grededr", "12354443", 1);
-		pat.addPaitent("sans undertale", "434343556", 1);
-		pat.addPaitent("weeder", "2824575", 1);
-		pat.addPaitent("wassre", "82586385", 1);
-		pat.addPaitent("awderd", "2742346", 1);
-
+		
 
 
 		/*
